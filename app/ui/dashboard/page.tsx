@@ -3,6 +3,7 @@ import ImageDesktop from "../../../public/home/desktop/image-hero.jpg";
 import ImageTablet from "../../../public/home/tablet/image-header.jpg";
 
 export default function HomePage() {
+
   return (
     <>
       <p>Home Page</p>

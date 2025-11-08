@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 declare global {
   var mongoose: any; // This must be a `var` and not a `let / const`
 }
@@ -14,7 +16,7 @@ async function dbConnect() {
 
   if (!MONGODB_URI) {
     throw new Error(
-      "Please define the MONGODB_URI environment variable inside .env",
+      "Please define the MONGODB_URI environment variable inside .env"
     );
   }
 
@@ -37,6 +39,5 @@ async function dbConnect() {
   }
   return cached.conn;
 }
-
 
 export default dbConnect;

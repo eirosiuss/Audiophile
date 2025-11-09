@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 export interface Products extends mongoose.Document {
-  _id: mongoose.Types.ObjectId;
   slug: string;
   name: string;
   image: {

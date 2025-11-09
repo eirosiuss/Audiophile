@@ -2,15 +2,13 @@ import Image from "next/image";
 import ImageDesktop from "../../../public/home/desktop/image-hero.jpg";
 import ImageTablet from "../../../public/home/tablet/image-header.jpg";
 import dbConnect from "@/app/lib/dbConnect";
-import Product, { Products } from "@/app/models/Product";
-import { GetServerSideProps } from "next";
+import Product from "@/app/models/Product";
 
-type Props = {
-  products: Products[];
-};
+export default async function HomePage() {
+  await dbConnect()
+  const products = await Product.find({}).lean()
+// console.log(products)
 
-export default function HomePage( {products} : Props) {
-  console.log(products)
   return (
     <>
       <p>Home Page</p>
@@ -27,18 +25,3 @@ export default function HomePage( {products} : Props) {
     </>
   );
 }
-
-// export const getServerSideProps: GetServerSideProps<Props> = async () => {
-//   await dbConnect();
-
-//   /* find all the data in our database */
-//   const result = await Product.find({});
-
-//   /* Ensures all objectIds and nested objectIds are serialized as JSON data */
-//   const products = result.map((doc) => {
-//     const product = JSON.parse(JSON.stringify(doc));
-//     return product;
-//   });
-
-//   return { props: { products: products } };
-// };

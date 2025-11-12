@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
+// "use client";
+// import React from "react";
 import Image from "next/image";
-import Headphone from "../../../../public/product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg";
+import Headphone from "../../../../public/product-xx99-mark-one-headphones/mobile/xx99-mark-one-headphones.png";
 
 interface MobileNavProps {
   onClose: () => void;
@@ -27,8 +27,8 @@ const MobileNav: React.FC<MobileNavProps> = ({ onClose }) => {
               src={Headphone}
               alt="xx99 mark one headphones"
             />
-            <div>
-              <h2>Speakers</h2>
+            <div className="w-80 bg-grey-light">
+              <h2 className="uppercase">Headphones</h2>
               <button>Shop</button>
             </div>
           </div>

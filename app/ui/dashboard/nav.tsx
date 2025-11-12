@@ -17,7 +17,7 @@ export default function Nav() {
 
       <div className="md:hidden bg-black">
         <div className="mx-6 py-8 flex justify-between ">
-          <button onClick={() => setIsOpen(true)}>
+          <button onClick={() => setIsOpen(!isOpen)}>
             <svg
               width="16"
               height="15"

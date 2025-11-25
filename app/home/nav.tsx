@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import NavLinks from "@/app/ui/dashboard/navLinks";
+import NavLinks from "@/app/home/navLinks";
 import MobileNav from "./mobileComponents/mobileNav";
 
 export default function Nav() {

@@ -1,5 +1,5 @@
-import "@/app/ui/global.css";
-import { manrope } from "@/app/ui/fonts";
+import "@/app/global.css";
+import { manrope } from "@/app/fonts";
 
 export default function RootLayout({
   children,

@@ -1,7 +1,7 @@
 // "use client";
 // import React from "react";
 import Image from "next/image";
-import Headphone from "../../../../public/product-xx99-mark-one-headphones/mobile/xx99-mark-one-headphones.png";
+import Headphone from "../../../public/product-xx99-mark-one-headphones/mobile/xx99-mark-one-headphones.png";
 
 interface MobileNavProps {
   onClose: () => void;

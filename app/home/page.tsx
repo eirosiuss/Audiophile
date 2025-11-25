@@ -1,8 +1,8 @@
 import Image from "next/image";
-import ImageDesktop from "../../../public/home/desktop/image-hero.jpg";
-import ImageTablet from "../../../public/home/tablet/image-header.jpg";
-import dbConnect from "@/app/lib/dbConnect";
-import Product from "@/app/models/Product";
+import ImageDesktop from "../../public/home/desktop/image-hero.jpg";
+import ImageTablet from "../../public/home/tablet/image-header.jpg";
+import dbConnect from "@/lib/dbConnect";
+import Product from "@/models/Product";
 
 export default async function HomePage() {
   await dbConnect()

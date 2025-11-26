@@ -48,7 +48,7 @@ const ProductSchema = new mongoose.Schema<Products>({
     tablet: String,
     desktop: String,
   },
-  new: { type: Boolean, default: false },
+  new: { type: Boolean, default: true },
   price: { type: Number, required: true },
   description: String,
   features: String,

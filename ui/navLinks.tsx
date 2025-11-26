@@ -4,15 +4,14 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 
 // Map of links to display in the side navigation.
-// Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: "Home", href: "/ui/dashboard" },
+  { name: "Home", href: "/home" },
   {
     name: "Headphones",
-    href: "/ui/dashboard/headphones",
+    href: "/home/headphones",
   },
-  { name: "Speakers", href: "/ui/dashboard/speakers" },
-  { name: "Earphones", href: "/ui/dashboard/earphones" },
+  { name: "Speakers", href: "/home/speakers" },
+  { name: "Earphones", href: "/home/earphones" },
 ];
 
 export default function NavLinks() {
@@ -28,7 +27,7 @@ export default function NavLinks() {
               "bg-sky-100 text-blue-600": pathname === link.href,
             })}
           >
-            <p>{link.name}</p>
+            {link.name}
           </Link>
         );
       })}

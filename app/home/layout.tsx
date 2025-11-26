@@ -1,11 +1,11 @@
-import Nav from "@/app/home/nav";
-import Footer from "./footer";
+import Nav from "@/ui/nav";
+import Footer from "../../ui/footer";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Nav/>
-      <div>{children}</div>
+      <main>{children}</main>
       <Footer />
     </>
   );

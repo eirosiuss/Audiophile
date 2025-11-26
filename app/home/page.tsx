@@ -7,11 +7,10 @@ import Product from "@/models/Product";
 export default async function HomePage() {
   await dbConnect()
   const products = await Product.find({}).lean()
-// console.log(products)
 
   return (
     <>
-      <p>Home Page</p>
+      <h1>Bringing you the best audio gear</h1>
       <Image
         src={ImageDesktop}
         className="hidden lg:block"

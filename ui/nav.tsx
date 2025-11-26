@@ -1,21 +1,21 @@
 "use client";
 import { useState } from "react";
-import NavLinks from "@/app/home/navLinks";
-import MobileNav from "./mobileComponents/mobileNav";
+import NavLinks from "@/ui/navLinks";
+import MobileNav from "../app/home/mobileComponents/mobileNav";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <div className="hidden md:block">
+      <nav className="hidden md:block">
         <NavLinks />
         <form>
           <button>Sign Out</button>
         </form>
-      </div>
+      </nav>
 
-      <div className="md:hidden bg-black">
+      <nav className="md:hidden bg-black">
         <div className="mx-6 py-8 flex justify-between ">
           <button onClick={() => setIsOpen(!isOpen)}>
             <svg
@@ -61,7 +61,7 @@ export default function Nav() {
             </svg>
           </button>
         </div>
-      </div>
+      </nav>
 
       {isOpen && <MobileNav onClose={() => setIsOpen(false)} />}
     </>

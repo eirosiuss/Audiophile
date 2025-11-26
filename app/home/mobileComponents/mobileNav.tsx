@@ -9,7 +9,7 @@ interface MobileNavProps {
 
 const MobileNav: React.FC<MobileNavProps> = ({ onClose }) => {
   return (
-    <div
+    <nav
       className="fixed w-full h-screen flex justify-center z-20"
       onClick={onClose}
     >
@@ -34,7 +34,7 @@ const MobileNav: React.FC<MobileNavProps> = ({ onClose }) => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 export default MobileNav;

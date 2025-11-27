@@ -3,6 +3,7 @@ import ImageDesktop from "../../public/home/desktop/image-hero.jpg";
 import ImageTablet from "../../public/home/tablet/image-header.jpg";
 import dbConnect from "@/lib/dbConnect";
 import Product from "@/models/Product";
+import Footer from "@/ui/footer";
 
 export default async function HomePage() {
   await dbConnect()
@@ -21,6 +22,7 @@ export default async function HomePage() {
         className="lg:hidden"
         alt="XX99 Mark II Headphones"
       />
+      <Footer/>
     </>
   );
 }

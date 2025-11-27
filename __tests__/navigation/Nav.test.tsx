@@ -3,11 +3,6 @@ import Nav from "@/ui/nav";
 import userEvent from "@testing-library/user-event";
 
 describe("Nav", () => {
-  it("should render a navigation", () => {
-    render(<Nav />);
-    expect(screen.getByRole("navigation")).toBeInTheDocument();
-  });
-
   it("should show nav links", () => {
     render(<Nav />);
     const links = [

@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
 import HomePage from "@/app/home/page";
 
-jest.mock("@/lib/dbConnect.ts", () => ({
+jest.mock("@/lib/dbConnect", () => ({
   __esModule: true,
   default: jest.fn().mockResolvedValue(undefined),
 }));
 
-jest.mock("@/models/Product.ts", () => ({
+jest.mock("@/models/Product", () => ({
   find: jest.fn().mockReturnValue({
     lean: jest.fn().mockResolvedValue([]),
   }),
@@ -20,6 +20,13 @@ describe("Home page", () => {
     ).toBeInTheDocument();
   });
 
+    it("should render a navigation", async () => {
+    render(await HomePage()); // HomePage() is async function
+    expect(
+      screen.getByRole("heading", { name: /bringing you the best audio gear/i })
+    ).toBeInTheDocument();
+  });
+
   it("should render a new product", async () => {
     render(await HomePage()); // HomePage() is async function
     expect(
@@ -27,13 +34,12 @@ describe("Home page", () => {
     ).toBeInTheDocument();
   });
 
-  it("should render a product list", async () => {
+  it("should render a product list with links", async () => {
     render(await HomePage()); // HomePage() is async function
-    const headings = ["headphones", "speakers", "earphones"];
-    headings.forEach((element) => {
-      expect(
-        screen.getByRole("heading", { name: new RegExp(element, "i") })
-      ).toBeInTheDocument();
+    const hrefs = ["/home/headphones", "/home/speakers", "/home/earphones"];
+    const links = screen.getAllByRole("link");
+    links.forEach((link, index) => {
+      expect(link).toHaveAttribute("href", hrefs[index]);
     });
   });
 

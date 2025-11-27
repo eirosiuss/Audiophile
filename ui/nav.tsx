@@ -1,22 +1,19 @@
 "use client";
 import { useState } from "react";
 import NavLinks from "@/ui/navLinks";
-import MobileNav from "../app/home/mobileComponents/mobileNav";
+import MobileNav from "./mobileComponents/mobileNav";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <nav className="hidden md:block">
-        <NavLinks />
-        <form>
-          <button>Sign Out</button>
-        </form>
-      </nav>
-
-      <nav className="md:hidden bg-black flex px-6 py-8 justify-between">
-        <button aria-label="menu" onClick={() => setIsOpen(!isOpen)}>
+      <div className="bg-black flex px-6 py-8 justify-between">
+        <button
+          className="block md:hidden"
+          aria-label="menu"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <svg
             focusable="false"
             width="16"
@@ -44,8 +41,19 @@ export default function Nav() {
             fill="white"
           />
         </svg>
-        <button>
+        <nav className="hidden md:block">
+          <form>
+            <ul>
+              <NavLinks />
+              <li>
+                <button>Sign Out</button>
+              </li>
+            </ul>
+          </form>
+        </nav>
+        <button aria-label="cart">
           <svg
+            focusable="false"
             width="23"
             height="20"
             viewBox="0 0 23 20"
@@ -60,8 +68,7 @@ export default function Nav() {
             />
           </svg>
         </button>
-      </nav>
-
+      </div>
       {isOpen && <MobileNav onClose={() => setIsOpen(false)} />}
     </>
   );

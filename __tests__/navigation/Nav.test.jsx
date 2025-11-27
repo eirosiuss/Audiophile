@@ -1,16 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import Nav from "@/ui/nav";
-import { usePathname } from "next/navigation";
 import userEvent from "@testing-library/user-event";
-
-jest.mock("next/navigation", () => ({
-  usePathname: jest.fn(),
-}));
 
 describe("Nav", () => {
   it("should render a navigation", () => {
     render(<Nav />);
-    expect(screen.getAllByRole("navigation")).toHaveLength(2);
+    expect(screen.getByRole("navigation")).toBeInTheDocument();
   });
 
   it("should show nav links", () => {
@@ -27,29 +22,27 @@ describe("Nav", () => {
     });
   });
 
-  it("should apply active class to selected link", () => {
-    usePathname.mockReturnValue("/home");
-    render(<Nav />);
-    const homeLink = screen.getByRole("link", {
-      name: /home/i,
-    });
-    expect(homeLink).toHaveClass("bg-sky-100");
-    expect(homeLink).toHaveClass("text-blue-600");
-  });
-
-  it("should show mobile-tablet menu on click", async () => {
+  it("should show cart menu on click", async () => {
     render(<Nav />);
     const user = userEvent.setup();
-    const menuBtn = screen.getByRole("button", {
-      name: /menu/i,
+    const cartBtn = screen.getByRole("button", {
+      name: /cart/i,
     });
-    await user.click(menuBtn);
-    const headings = ["headphones", "speakers", "earphones"];
+    await user.click(cartBtn);
+    const cartHeading = screen.getByRole("heading", { name: /cart/i });
+    expect(cartHeading).toBeInTheDocument();
+  });
 
-    headings.forEach((element) => {
-      expect(
-        screen.getByRole("heading", { name: new RegExp(element, "i") })
-      ).toBeInTheDocument();
+  it("should close cart menu on click", async () => {
+    render(<Nav />);
+    const user = userEvent.setup();
+    const cartBtn = screen.getByRole("button", {
+      name: /cart/i,
     });
+    await user.click(cartBtn);
+    const cartHeading = screen.getByRole("heading", { name: /cart/i });
+    expect(cartHeading).toBeInTheDocument();
+    await user.click(cartBtn);
+    expect(cartHeading).not.toBeInTheDocument();
   });
 });

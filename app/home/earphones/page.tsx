@@ -1,5 +1,5 @@
-import dbConnect from "@/lib/dbConnect";
-import Product from "@/models/Product";
+import dbConnect from "@/app/lib/dbConnect";
+import Product from "@/app/models/Product";
 
 export default async function Earphones() {
   await dbConnect();

@@ -11,7 +11,6 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@neondatabase/serverless": "^1.0.2",
     "@vercel/functions": "^3.2.0",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",

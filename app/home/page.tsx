@@ -1,13 +1,14 @@
 import Image from "next/image";
-import ImageDesktop from "../../public/home/desktop/image-hero.jpg";
-import ImageTablet from "../../public/home/tablet/image-header.jpg";
-import dbConnect from "@/lib/dbConnect";
-import Product from "@/models/Product";
-import Footer from "@/ui/footer";
+import ImageDesktop from "@/public/home/desktop/image-hero.jpg";
+import ImageTablet from "@/public/home/tablet/image-header.jpg";
+import dbConnect from "@/app/lib/dbConnect";
+import Product from "@/app/models/Product";
+import Footer from "@/app/ui/footer";
 
 export default async function HomePage() {
   await dbConnect()
-  const products = await Product.find({}).lean()
+  const ZX9Speaker = await Product.find({name: "ZX9 Speaker"}).lean()
+  // console.log(ZX9Speaker)
 
   return (
     <>

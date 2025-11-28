@@ -4,7 +4,7 @@ import Footer from "@/app/ui/footer";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Nav/>
+      <Nav />
       <main>{children}</main>
       <Footer />
     </>

@@ -23,6 +23,14 @@ export default async function HomePage() {
         className="lg:hidden"
         alt="XX99 Mark II Headphones"
       />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
       <Footer/>
     </>
   );

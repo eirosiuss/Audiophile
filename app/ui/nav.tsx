@@ -7,8 +7,8 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <>
-      <div className="bg-black flex px-6 py-8 justify-between">
+    <div className="relative lg:static pb-23 lg:pb-0">
+      <div className="bg-black flex px-6 py-8 justify-between fixed z-30 top-0 left-0 w-full items-center lg:static">
         <button
           className="block md:hidden"
           aria-label="menu"
@@ -70,6 +70,6 @@ export default function Nav() {
         </button>
       </div>
       {isOpen && <MobileNav onClose={() => setIsOpen(false)} />}
-    </>
+    </div>
   );
 }

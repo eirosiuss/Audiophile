@@ -23,9 +23,9 @@ export default function CategoryMenu() {
           />
         </div>
         <div className="w-full bg-grey-light rounded-lg flex flex-col justify-center items-center pt-20 -mt-12">
-          <p className="uppercase text-sm font-bold ">Headphones</p>
+          <p className="uppercase text-[15px] font-bold">Headphones</p>
           <Link
-            className="py-5 px-20 flex gap-3 uppercase font-bold text-xs text-black/50"
+            className="py-5 px-20 flex gap-3 uppercase font-bold text-[13px] text-black/50 hover:text-[#D87D4A]"
             href="/home/headphones"
           >
             Shop
@@ -57,9 +57,9 @@ export default function CategoryMenu() {
           <Image className="mx-auto" src={Speaker} alt="zx9 speaker" />
         </div>
         <div className="w-full bg-grey-light rounded-lg flex flex-col justify-center items-center pt-20 -mt-12">
-          <p className="uppercase text-sm font-bold">Speakers</p>
+          <p className="uppercase text-[15px] font-bold">Speakers</p>
           <Link
-            className="py-5 px-20 flex gap-3 uppercase font-bold text-xs text-black/50"
+            className="py-5 px-20 flex gap-3 uppercase font-bold text-[13px] text-black/50 hover:text-[#D87D4A]"
             href="/home/speakers"
           >
             Shop
@@ -91,9 +91,9 @@ export default function CategoryMenu() {
           <Image className="mx-auto" src={Earphone} alt="yx1 earphones" />
         </div>
         <div className="w-full bg-grey-light rounded-lg flex flex-col justify-center items-center pt-20 -mt-12">
-          <p className="uppercase text-sm font-bold ">Earphones</p>
+          <p className="uppercase text-[15px] font-bold">Earphones</p>
           <Link
-            className="py-5 px-20 flex gap-3 uppercase font-bold text-xs text-black/50"
+            className="py-5 px-20 flex gap-3 uppercase font-bold text-[13px] text-black/50 hover:text-[#D87D4A]"
             href="/home/earphones"
           >
             Shop

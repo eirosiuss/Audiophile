@@ -32,45 +32,50 @@ export interface Products extends mongoose.Document {
     name: string;
     image: { mobile: string; tablet: string; desktop: string };
   }[];
+  createdAt: Date;
+  updatedAt: Date;
 }
 
-const ProductSchema = new mongoose.Schema<Products>({
-  slug: { type: String, required: true, unique: true },
-  name: { type: String, required: true },
-  image: {
-    mobile: String,
-    tablet: String,
-    desktop: String,
-  },
-  category: { type: String, required: true },
-  categoryImage: {
-    mobile: String,
-    tablet: String,
-    desktop: String,
-  },
-  new: { type: Boolean, default: true },
-  price: { type: Number, required: true },
-  description: String,
-  features: String,
-  includes: [
-    {
-      quantity: Number,
-      item: String,
+const ProductSchema = new mongoose.Schema<Products>(
+  {
+    slug: { type: String, required: true, unique: true },
+    name: { type: String, required: true },
+    image: {
+      mobile: String,
+      tablet: String,
+      desktop: String,
     },
-  ],
-  gallery: {
-    first: { mobile: String, tablet: String, desktop: String },
-    second: { mobile: String, tablet: String, desktop: String },
-    third: { mobile: String, tablet: String, desktop: String },
-  },
-  others: [
-    {
-      slug: String,
-      name: String,
-      image: { mobile: String, tablet: String, desktop: String },
+    category: { type: String, required: true },
+    categoryImage: {
+      mobile: String,
+      tablet: String,
+      desktop: String,
     },
-  ],
-});
+    new: { type: Boolean, default: true },
+    price: { type: Number, required: true },
+    description: String,
+    features: String,
+    includes: [
+      {
+        quantity: Number,
+        item: String,
+      },
+    ],
+    gallery: {
+      first: { mobile: String, tablet: String, desktop: String },
+      second: { mobile: String, tablet: String, desktop: String },
+      third: { mobile: String, tablet: String, desktop: String },
+    },
+    others: [
+      {
+        slug: String,
+        name: String,
+        image: { mobile: String, tablet: String, desktop: String },
+      },
+    ],
+  },
+  { timestamps: true }
+);
 
 export default mongoose.models.Product ||
   mongoose.model<Products>("Product", ProductSchema);

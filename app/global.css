@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
+body {
+  font-size: 1rem;
+  color: black;
+}
+
 :root {
-  --color-primary: #D87D4A;
-  --color-primary-light: #FBAF85;
+  --color-orange: #D87D4A;
+  --color-orange-light: #FBAF85;
   --color-dark: #101010;
   --color-grey-light: #F1F1F1;
   --color-grey-lighter: #FAFAFA;
@@ -32,17 +37,59 @@
   color: var(--color-dark);
 }
 
-  input[type='number'] {
-    -moz-appearance: textfield;
-    appearance: textfield;
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+@layer components {
+  .btn {
+    transition: 0.3s ease;
+    padding-block: 0.938rem;
+    padding-inline: 1.875rem;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.813rem;
   }
 
-  input[type='number']::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  .btn--orange {
+    background-color: var(--color-orange);
   }
 
-  input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  .btn--orange:hover {
+    background-color: var(--color-orange-light);
   }
+
+  .btn--white {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  .btn--white:hover {
+    background-color: black;
+    color: white;
+  }
+
+    .btn--transparent {
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+  }
+
+  .btn--transparent:hover {
+    opacity: 10%;
+    color: black;
+  }
+}

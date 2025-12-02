@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Nav from "@/ui/nav";
+import Nav from "@/app/ui/nav";
 import userEvent from "@testing-library/user-event";
 
 describe("Nav", () => {

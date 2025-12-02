@@ -6,32 +6,30 @@ import Product from "@/app/models/Product";
 import Footer from "@/app/ui/footer";
 
 export default async function HomePage() {
-  await dbConnect()
-  const ZX9Speaker = await Product.find({name: "ZX9 Speaker"}).lean()
-  // console.log(ZX9Speaker)
+  await dbConnect();
+  const product = await Product.findOne({ slug: "xx99-mark-two-headphones" }).lean();
 
   return (
     <>
-      <h1>Bringing you the best audio gear</h1>
-      <Image
+      <hr className="border-b-2 border-b-neutral-700" />
+      {/* <Image
         src={ImageDesktop}
         className="hidden lg:block"
         alt="XX99 Mark II Headphones"
-      />
-      <Image
+      /> */}
+
+      <header className="h-[510px] bg-bottom bg-cover bg-[url('@/public/home/mobile/image-header.jpg')]">
+      <div>
+        {/* <p>{product.new ? "New Product" : ""}</p> */}
+      </div>
+      </header>
+      {/* <Image
         src={ImageTablet}
-        className="lg:hidden"
+        className="lg:hidden object-cover -z-10"
         alt="XX99 Mark II Headphones"
-      />
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, dolorem esse. Maxime temporibus minus architecto nihil ad, eos cum, voluptates quibusdam doloremque optio mollitia! Similique expedita maiores voluptate vel deleniti.</p>
-      <Footer/>
+      /> */}
+      <h1>Bringing you the best audio gear</h1>
+      <Footer />
     </>
   );
 }

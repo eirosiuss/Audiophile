@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Footer from "@/ui/footer";
+import Footer from "@/app/ui/footer";
 import HomePage from "@/app/home/page";
 
 jest.mock("@/lib/dbConnect", () => ({

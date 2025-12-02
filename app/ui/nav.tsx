@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
 import NavLinks from "@/app/ui/navLinks";
-import MobileNav from "./mobileComponents/mobileNav";
+import CategoryMenu from "./categoryMenu";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative lg:static pb-23 lg:pb-0">
+    <div className="relative lg:static h-22 lg:h-0">
       <div className="bg-black flex px-6 py-8 justify-between fixed z-30 top-0 left-0 w-full items-center lg:static">
         <button
           className="block md:hidden"
@@ -42,14 +42,12 @@ export default function Nav() {
           />
         </svg>
         <nav className="hidden md:block">
-          <form>
-            <ul>
-              <NavLinks />
-              <li>
-                <button>Sign Out</button>
-              </li>
-            </ul>
-          </form>
+          <ul>
+            <NavLinks />
+            <li>
+              <button>Sign Out</button>
+            </li>
+          </ul>
         </nav>
         <button aria-label="cart">
           <svg
@@ -69,7 +67,17 @@ export default function Nav() {
           </svg>
         </button>
       </div>
-      {isOpen && <MobileNav onClose={() => setIsOpen(false)} />}
+      {isOpen && (
+        <>
+          <div
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 bg-black/50 z-10"
+          ></div>
+          <nav className="absolute w-full top-20 flex justify-center z-20">
+            <CategoryMenu />
+          </nav>
+        </>
+      )}
     </div>
   );
 }

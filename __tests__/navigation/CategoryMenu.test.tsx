@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import MobileNav from "@/ui/mobileComponents/mobileNav.tsx";
+import CategoryMenu from "@/app/ui/categoryMenu";
 import userEvent from "@testing-library/user-event";
+import Nav from "@/app/ui/nav";
 
-describe("Mobile Nav", () => {
+describe("Category Menu", () => {
   it("should show mobile-tablet navigation menu on click", async () => {
     render(<Nav />);
     const user = userEvent.setup();
@@ -12,7 +13,7 @@ describe("Mobile Nav", () => {
     await user.click(menuBtn);
     const texts = ["headphones", "speakers", "earphones"];
     texts.forEach((element) => {
-      expect(screen.getByText(new RegExp(element, "i"))).toBeInTheDocument();
+      expect(screen.getAllByText(new RegExp(element, "i"))).toHaveLength(2);
     });
   });
 
@@ -25,18 +26,18 @@ describe("Mobile Nav", () => {
     await user.click(menuBtn);
     const texts = ["headphones", "speakers", "earphones"];
     texts.forEach((element) => {
-      expect(screen.getByText(new RegExp(element, "i"))).toBeInTheDocument();
+      expect(screen.getAllByText(new RegExp(element, "i"))).toHaveLength(2);
     });
     await user.click(menuBtn);
     texts.forEach((element) => {
       expect(
-        screen.getByText(new RegExp(element, "i"))
+        screen.queryByText(new RegExp(element, "i"))
       ).not.toBeInTheDocument();
     });
   });
 
   it("should show nav links", () => {
-    render(<MobileNav />);
+    render(<CategoryMenu />);
     const hrefs = ["/home/headphones", "/home/speakers", "/home/earphones"];
     const links = screen.getAllByRole("link");
     links.forEach((link, index) => {

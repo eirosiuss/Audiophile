@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import clsx from "clsx";
 
 // Map of links to display in the side navigation.
 export const links = [
@@ -23,9 +22,7 @@ export default function NavLinks() {
           <li key={link.name}>
             <Link
               href={link.href}
-              className={clsx("flex", {
-                "bg-sky-100 text-blue-600": pathname === link.href,
-              })}
+              className={pathname === link.href ? "text-orange" : ""}
             >
               {link.name}
             </Link>

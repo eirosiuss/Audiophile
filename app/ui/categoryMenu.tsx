@@ -4,28 +4,25 @@ import Headphone from "@/public/product-xx99-mark-one-headphones/mobile/xx99-mar
 import Earphone from "@/public/product-yx1-earphones/mobile/yx1-earphones.svg";
 import Speaker from "@/public/product-zx9-speaker/mobile/zx9-speaker.svg";
 
-export default function CategoryMenu() {
+type CategoryMenuProps = {
+  onClose?: () => void;
+};
+
+export default function CategoryMenu({ onClose }: CategoryMenuProps) {
   return (
-    <ul
-      className="bg-white w-full px-6 flex flex-col justify-center items-center gap-4 py-8 rounded-b-2xl"
-      onClick={(e) => e.stopPropagation()}
-    >
+    <ul className="flex w-full flex-col items-center justify-center gap-4 bg-white px-6 py-8 md:flex-row md:gap-2.5 md:px-10 md:py-15">
       <li className="w-full">
-        <div
-          className="mx-auto relative before:content-[''] before:absolute before:-bottom-2.5 
-            before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-4 
-            before:bg-black/50 before:blur-lg"
-        >
+        <div className="relative mx-auto before:absolute before:-bottom-2.5 before:left-1/2 before:h-4 before:w-24 before:-translate-x-1/2 before:bg-black/50 before:blur-lg before:content-['']">
           <Image
             className="mx-auto"
             src={Headphone}
             alt="xx99 mark one headphones"
           />
         </div>
-        <div className="w-full bg-grey-light rounded-lg flex flex-col justify-center items-center pt-20 -mt-12">
-          <p className="uppercase text-[15px] font-bold">Headphones</p>
-          <Link
-            className="py-5 px-20 flex gap-3 uppercase font-bold text-[13px] text-black/50 hover:text-[#D87D4A]"
+        <div className="bg-grey-light -mt-12 flex w-full flex-col items-center justify-center rounded-lg pt-20">
+          <p className="text-[0.938rem] font-bold uppercase">Headphones</p>
+          <Link onClick={onClose}
+            className="flex gap-3 px-20 py-5 text-[13px] font-bold text-black/50 uppercase hover:text-[#D87D4A]"
             href="/home/headphones"
           >
             Shop
@@ -49,17 +46,13 @@ export default function CategoryMenu() {
         </div>
       </li>
       <li className="w-full">
-        <div
-          className="mx-auto relative before:content-[''] before:absolute before:-bottom-2.5 
-            before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-4 
-            before:bg-black/50 before:blur-lg"
-        >
+        <div className="relative mx-auto before:absolute before:-bottom-2.5 before:left-1/2 before:h-4 before:w-24 before:-translate-x-1/2 before:bg-black/50 before:blur-lg before:content-['']">
           <Image className="mx-auto" src={Speaker} alt="zx9 speaker" />
         </div>
-        <div className="w-full bg-grey-light rounded-lg flex flex-col justify-center items-center pt-20 -mt-12">
-          <p className="uppercase text-[15px] font-bold">Speakers</p>
-          <Link
-            className="py-5 px-20 flex gap-3 uppercase font-bold text-[13px] text-black/50 hover:text-[#D87D4A]"
+        <div className="bg-grey-light -mt-12 flex w-full flex-col items-center justify-center rounded-lg pt-20">
+          <p className="text-[0.938rem] font-bold uppercase">Speakers</p>
+          <Link onClick={onClose}
+            className="flex gap-3 px-20 py-5 text-[13px] font-bold text-black/50 uppercase hover:text-[#D87D4A]"
             href="/home/speakers"
           >
             Shop
@@ -83,17 +76,13 @@ export default function CategoryMenu() {
         </div>
       </li>
       <li className="w-full">
-        <div
-          className="mx-auto relative before:content-[''] before:absolute before:-bottom-2.5 
-            before:left-1/2 before:-translate-x-1/2 before:w-24 before:h-4 
-            before:bg-black/50 before:blur-lg"
-        >
+        <div className="relative mx-auto before:absolute before:-bottom-2.5 before:left-1/2 before:h-4 before:w-24 before:-translate-x-1/2 before:bg-black/50 before:blur-lg before:content-['']">
           <Image className="mx-auto" src={Earphone} alt="yx1 earphones" />
         </div>
-        <div className="w-full bg-grey-light rounded-lg flex flex-col justify-center items-center pt-20 -mt-12">
-          <p className="uppercase text-[15px] font-bold">Earphones</p>
-          <Link
-            className="py-5 px-20 flex gap-3 uppercase font-bold text-[13px] text-black/50 hover:text-[#D87D4A]"
+        <div className="bg-grey-light -mt-12 flex w-full flex-col items-center justify-center rounded-lg pt-20">
+          <p className="text-[0.938rem] font-bold uppercase">Earphones</p>
+          <Link onClick={onClose}
+            className="flex gap-3 px-20 py-5 text-[13px] font-bold text-black/50 uppercase hover:text-[#D87D4A]"
             href="/home/earphones"
           >
             Shop

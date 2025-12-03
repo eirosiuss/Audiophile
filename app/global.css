@@ -29,8 +29,8 @@ body {
   background-color: var(--color-grey-lighter);
 }
 
-.text-primary {
-  color: var(--color-primary);
+.text-orange {
+  color: var(--color-orange);
 }
 
 .text-dark {

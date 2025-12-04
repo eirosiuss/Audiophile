@@ -1,5 +1,5 @@
 type ButtonProps = {
-  backgroundColor: "orange" | "white" | "transparent";
+  backgroundColor: "orange" | "white" | "transparent"| "black";
 };
 
 export default function Button({ backgroundColor }: ButtonProps) {
@@ -14,6 +14,9 @@ export default function Button({ backgroundColor }: ButtonProps) {
       break;
     case "transparent":
       colorClass = "btn--transparent";
+      break;
+      case "black":
+      colorClass = "btn--black";
       break;
   }
 

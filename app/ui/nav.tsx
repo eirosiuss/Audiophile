@@ -8,8 +8,8 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-black">
-      <div className="flex max-w-277.5 items-center justify-between border-b-2 border-b-neutral-700 px-6 py-8 md:mx-10 md:justify-start md:gap-11 md:px-0 lg:mx-10 lg:justify-between lg:gap-0 xl:mx-auto">
+    <div className="fixed top-0 left-0 z-40 w-full bg-black">
+      <div className="z-30 flex max-w-277.5 items-center justify-between border-b-2 border-b-neutral-700 px-6 py-8 md:mx-10 md:justify-start md:gap-11 md:px-0 lg:mx-10 lg:justify-between lg:gap-0 xl:mx-auto">
         <button
           className="block lg:hidden"
           aria-label="menu"
@@ -45,7 +45,7 @@ export default function Nav() {
           </svg>
         </Link>
         <nav className="hidden lg:block">
-          <ul className="flex gap-8 text-[0.813rem] leading-6 text-white uppercase">
+          <ul className="flex gap-8 text-[0.813rem] text-white uppercase">
             <NavLinks />
             <li>
               <button className="cursor-pointer uppercase">Sign Out</button>
@@ -78,7 +78,10 @@ export default function Nav() {
             className="fixed inset-0 top-20 z-10 bg-black/50"
           ></div>
           <div className="absolute top-22 left-0 z-20 max-h-[80vh] w-full overflow-y-auto rounded-b-2xl">
-            <CategoryMenu onClose={() => setIsOpen(false)} />
+            <CategoryMenu
+              className="px-6 py-8 md:px-10 md:py-15"
+              onClose={() => setIsOpen(false)}
+            />
           </div>
         </>
       )}

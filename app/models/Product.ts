@@ -41,40 +41,56 @@ const ProductSchema = new mongoose.Schema<Products>(
     slug: { type: String, required: true, unique: true },
     name: { type: String, required: true },
     image: {
-      mobile: String,
-      tablet: String,
-      desktop: String,
+      mobile: { type: String },
+      tablet: { type: String },
+      desktop: { type: String },
     },
     category: { type: String, required: true },
     categoryImage: {
-      mobile: String,
-      tablet: String,
-      desktop: String,
+      mobile: { type: String },
+      tablet: { type: String },
+      desktop: { type: String },
     },
     new: { type: Boolean, default: true },
     price: { type: Number, required: true },
-    description: String,
-    features: String,
+    description: { type: String },
+    features: { type: String },
     includes: [
       {
-        quantity: Number,
-        item: String,
+        quantity: { type: Number },
+        item: { type: String },
       },
     ],
     gallery: {
-      first: { mobile: String, tablet: String, desktop: String },
-      second: { mobile: String, tablet: String, desktop: String },
-      third: { mobile: String, tablet: String, desktop: String },
+      first: {
+        mobile: { type: String },
+        tablet: { type: String },
+        desktop: { type: String },
+      },
+      second: {
+        mobile: { type: String },
+        tablet: { type: String },
+        desktop: { type: String },
+      },
+      third: {
+        mobile: { type: String },
+        tablet: { type: String },
+        desktop: { type: String },
+      },
     },
     others: [
       {
-        slug: String,
-        name: String,
-        image: { mobile: String, tablet: String, desktop: String },
+        slug: { type: String },
+        name: { type: String },
+        image: {
+          mobile: { type: String },
+          tablet: { type: String },
+          desktop: { type: String },
+        },
       },
     ],
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.models.Product ||

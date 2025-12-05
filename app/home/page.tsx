@@ -23,6 +23,11 @@ export default async function HomePage() {
     name: "XX99 Mark II Headphones",
   });
 
+  const earphone = await Product.findOne({
+    category: "earphones",
+    name: "YX1 Wireless Earphones",
+  });
+
   return (
     <>
       <header className="h-[600px] bg-[url('@/public/home/desktop/image-hero.jpg')] bg-cover bg-position-[75%_50%] px-6 md:h-[729px] md:bg-position-[87%_50%] md:px-10 lg:bg-right">
@@ -30,6 +35,7 @@ export default async function HomePage() {
           {headphone && (
             <HeadingHome
               titleColor="text-white"
+              titleSize="text-4xl md:text-[3.5rem]"
               className="pt-50 text-center md:mx-auto md:max-w-94 md:pt-54 lg:mx-0 lg:pt-56 lg:text-left"
               isNew={headphone.new}
               name={headphone.name}
@@ -49,24 +55,15 @@ export default async function HomePage() {
               <div className="absolute z-10 h-80 w-80 rounded-full border border-white/50 md:h-136 md:w-136"></div>
               <div className="absolute z-10 h-70 w-70 rounded-full border border-white/50 md:h-118 md:w-118"></div>
               <div className="lg:hidden">
-                <Image
-                  src={Speaker}
-                  alt="ZX9 Speaker"
-                  width={172}
-                  height={207}
-                />
+                <Image src={Speaker} alt="ZX9 Speaker" width={172} />
               </div>
               <div className="z-20 hidden lg:block">
-                <Image
-                  src={Speaker}
-                  alt="ZX9 Speaker"
-                  width={410}
-                  height={493}
-                />
+                <Image src={Speaker} alt="ZX9 Speaker" width={410} />
               </div>
             </div>
             <HeadingHome
               titleColor="text-white"
+              titleSize="text-4xl md:text-[3.5rem]"
               className="mx-auto -mt-8 px-6 text-center md:-mt-32 md:max-w-88 lg:mt-0 lg:px-0 lg:text-left"
               name={speaker.name}
               description="Upgrade to premium speakers that are phenomenally built to
@@ -77,11 +74,12 @@ export default async function HomePage() {
           </div>
         )}
 
-        <div className="h-80 rounded-lg bg-[url('@/public/home/tablet/image-speaker-zx7.jpg')] bg-cover bg-center lg:bg-bottom">
+        <div className="mb-6 h-80 rounded-lg bg-[url('@/public/home/tablet/image-speaker-zx7.jpg')] bg-cover bg-center md:mb-8 lg:mb-12 lg:bg-bottom">
           <div className="mx-auto flex h-full max-w-277.5 flex-col justify-center">
             {speakerTwo && (
               <HeadingHome
                 titleColor="text-black"
+                titleSize="text-[1.75rem]"
                 className="ml-6 md:ml-15"
                 name={speakerTwo.name}
               >
@@ -89,6 +87,22 @@ export default async function HomePage() {
               </HeadingHome>
             )}
           </div>
+        </div>
+
+        <div className="flex flex-col gap-6 md:flex-row md:gap-2.5 lg:gap-7.5">
+          <div className="h-50 rounded-lg bg-[url('@/public/home/tablet/image-earphones-yx1.jpg')] bg-cover bg-center md:h-80 md:w-1/2"></div>
+          {earphone && (
+            <div className="bg-grey-light rounded-lg md:w-1/2">
+              <HeadingHome
+                titleColor="text-black"
+                titleSize="text-[1.75rem]"
+                className="ml-6 pt-6 pb-10 md:ml-10 md:pt-21 lg:ml-23.5"
+                name={earphone.name}
+              >
+                <Button backgroundColor="transparent" />
+              </HeadingHome>
+            </div>
+          )}
         </div>
       </main>
       <h2>Bringing you the best audio gear</h2>

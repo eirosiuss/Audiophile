@@ -20,5 +20,5 @@ export default function Button({ backgroundColor }: ButtonProps) {
       break;
   }
 
-  return <button className={`btn ${colorClass}`}>See product</button>;
+  return <button className={`btn cursor-pointer ${colorClass}`}>See product</button>;
 }

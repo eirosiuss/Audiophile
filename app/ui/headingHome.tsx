@@ -7,6 +7,7 @@ type HeadingHomeProps = {
   className: string;
   isNew?: boolean;
   titleColor: "text-white" | "text-black";
+  titleSize: "text-4xl md:text-[3.5rem]" | "text-[1.75rem]";
 };
 
 export default function HeadingHome({
@@ -15,7 +16,8 @@ export default function HeadingHome({
   children,
   className,
   isNew,
-  titleColor
+  titleColor,
+  titleSize,
 }: HeadingHomeProps) {
   return (
     <div className={clsx(className)}>
@@ -24,7 +26,13 @@ export default function HeadingHome({
           {isNew && "New Product"}
         </p>
       )}
-      <h2 className={clsx("md:text-[3.5rem] pt-4 pb-6 text-4xl font-bold uppercase md:py-6", titleColor)}>
+      <h2
+        className={clsx(
+          "pt-4 pb-6 font-bold uppercase md:py-6",
+          titleColor,
+          titleSize,
+        )}
+      >
         {name}
       </h2>
       {description && (

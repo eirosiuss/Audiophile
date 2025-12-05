@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import NavLinks from "@/app/ui/navLinks";
-import CategoryMenu from "./categoryMenu";
+import CategoriesLinks from "./categoriesLinks";
 import Link from "next/link";
 
 export default function Nav() {
@@ -78,7 +78,7 @@ export default function Nav() {
             className="fixed inset-0 top-20 z-10 bg-black/50"
           ></div>
           <div className="absolute top-22 left-0 z-20 max-h-[80vh] w-full overflow-y-auto rounded-b-2xl">
-            <CategoryMenu
+            <CategoriesLinks
               className="px-6 py-8 md:px-10 md:py-15"
               onClose={() => setIsOpen(false)}
             />

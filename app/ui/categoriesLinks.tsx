@@ -38,7 +38,7 @@ const items: CategoryItem[] = [
   },
 ];
 
-export default function CategoryMenu({
+export default function CategoriesLinks({
   onClose,
   className,
 }: CategoryMenuProps) {

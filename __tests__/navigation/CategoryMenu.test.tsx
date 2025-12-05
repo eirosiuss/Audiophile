@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import CategoryMenu from "@/app/ui/categoryMenu";
+import CategoryMenu from "@/app/ui/categoriesLinks";
 import userEvent from "@testing-library/user-event";
 import Nav from "@/app/ui/nav";
 

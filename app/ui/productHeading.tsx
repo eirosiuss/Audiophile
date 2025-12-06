@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-type HeadingHomeProps = {
+type ProductHeadingProps = {
   name: string;
   description?: string;
   children: React.ReactNode;
@@ -10,7 +10,7 @@ type HeadingHomeProps = {
   titleSize: "text-4xl md:text-[3.5rem]" | "text-[1.75rem]";
 };
 
-export default function HeadingHome({
+export default function ProductHeading({
   name,
   description,
   children,
@@ -18,7 +18,7 @@ export default function HeadingHome({
   isNew,
   titleColor,
   titleSize,
-}: HeadingHomeProps) {
+}: ProductHeadingProps) {
   return (
     <div className={clsx(className)}>
       {isNew && (

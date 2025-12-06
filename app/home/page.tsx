@@ -4,8 +4,9 @@ import Button from "../ui/buttons/button";
 import CategoriesLinks from "../ui/categoriesLinks";
 import Speaker from "@/public/product-zx9-speaker/desktop/image-product.svg";
 import Image from "next/image";
-import HeadingHome from "../ui/headingHome";
+import ProductHeading from "../ui/productHeading";
 import Header from "../ui/header";
+import Footer from "../ui/footer";
 
 export default async function HomePage() {
   await dbConnect();
@@ -34,7 +35,7 @@ export default async function HomePage() {
       <div className="h-[600px] bg-[url('@/public/home/desktop/image-hero.jpg')] bg-cover bg-position-[75%_50%] px-6 md:h-[729px] md:bg-position-[87%_50%] md:px-10 lg:bg-right">
         <div className="mx-auto max-w-277.5">
           {headphone && (
-            <HeadingHome
+            <ProductHeading
               titleColor="text-white"
               titleSize="text-4xl md:text-[3.5rem]"
               className="pt-50 text-center md:mx-auto md:max-w-94 md:pt-54 lg:mx-0 lg:pt-56 lg:text-left"
@@ -44,7 +45,7 @@ export default async function HomePage() {
                 made for the passionate music enthusiast."
             >
               <Button backgroundColor="orange" />
-            </HeadingHome>
+            </ProductHeading>
           )}
         </div>
       </div>
@@ -62,7 +63,7 @@ export default async function HomePage() {
                 <Image src={Speaker} alt="ZX9 Speaker" width={410} />
               </div>
             </div>
-            <HeadingHome
+            <ProductHeading
               titleColor="text-white"
               titleSize="text-4xl md:text-[3.5rem]"
               className="mx-auto -mt-8 px-6 text-center md:-mt-32 md:max-w-88 lg:mt-0 lg:px-0 lg:text-left"
@@ -71,21 +72,21 @@ export default async function HomePage() {
                 deliver truly remarkable sound."
             >
               <Button backgroundColor="black" />
-            </HeadingHome>
+            </ProductHeading>
           </div>
         )}
 
         <div className="mb-6 h-80 rounded-lg bg-[url('@/public/home/tablet/image-speaker-zx7.jpg')] bg-cover bg-center md:mb-8 lg:mb-12 lg:bg-bottom">
           <div className="mx-auto flex h-full max-w-277.5 flex-col justify-center">
             {speakerTwo && (
-              <HeadingHome
+              <ProductHeading
                 titleColor="text-black"
                 titleSize="text-[1.75rem]"
                 className="ml-6 md:ml-15"
                 name={speakerTwo.name}
               >
                 <Button backgroundColor="transparent" />
-              </HeadingHome>
+              </ProductHeading>
             )}
           </div>
         </div>
@@ -94,20 +95,20 @@ export default async function HomePage() {
           <div className="h-50 rounded-lg bg-[url('@/public/home/tablet/image-earphones-yx1.jpg')] bg-cover bg-center md:h-80 md:w-1/2"></div>
           {earphone && (
             <div className="bg-grey-light rounded-lg md:w-1/2">
-              <HeadingHome
+              <ProductHeading
                 titleColor="text-black"
                 titleSize="text-[1.75rem]"
                 className="ml-6 pt-6 pb-10 md:ml-10 md:pt-21 lg:ml-23.5"
                 name={earphone.name}
               >
                 <Button backgroundColor="transparent" />
-              </HeadingHome>
+              </ProductHeading>
             </div>
           )}
         </div>
       </main>
       <Header />
-      <h2>Bringing you the best audio gear</h2>
+      <Footer />
     </>
   );
 }

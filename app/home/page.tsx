@@ -5,6 +5,7 @@ import CategoriesLinks from "../ui/categoriesLinks";
 import Speaker from "@/public/product-zx9-speaker/desktop/image-product.svg";
 import Image from "next/image";
 import HeadingHome from "../ui/headingHome";
+import Header from "../ui/header";
 
 export default async function HomePage() {
   await dbConnect();
@@ -30,7 +31,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <header className="h-[600px] bg-[url('@/public/home/desktop/image-hero.jpg')] bg-cover bg-position-[75%_50%] px-6 md:h-[729px] md:bg-position-[87%_50%] md:px-10 lg:bg-right">
+      <div className="h-[600px] bg-[url('@/public/home/desktop/image-hero.jpg')] bg-cover bg-position-[75%_50%] px-6 md:h-[729px] md:bg-position-[87%_50%] md:px-10 lg:bg-right">
         <div className="mx-auto max-w-277.5">
           {headphone && (
             <HeadingHome
@@ -46,8 +47,8 @@ export default async function HomePage() {
             </HeadingHome>
           )}
         </div>
-      </header>
-      <main className="mx-6 md:mx-10 lg:max-w-277.5 xl:mx-auto">
+      </div>
+      <main className="mx-6 mb-30 md:mx-10 md:mb-24 lg:mb-50 lg:max-w-277.5 xl:mx-auto">
         <CategoriesLinks className="pt-10 pb-30 md:py-24 lg:pt-30 lg:pb-42" />
         {speaker && (
           <div className="bg-orange mb-6 w-full rounded-lg pb-14 md:mb-8 md:pb-16 lg:mb-12 lg:flex lg:items-center lg:gap-35 lg:pb-0">
@@ -105,6 +106,7 @@ export default async function HomePage() {
           )}
         </div>
       </main>
+      <Header />
       <h2>Bringing you the best audio gear</h2>
     </>
   );

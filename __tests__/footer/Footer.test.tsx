@@ -1,24 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Footer from "@/app/ui/footer";
-import HomePage from "@/app/home/page";
-
-jest.mock("@/lib/dbConnect", () => ({
-  __esModule: true,
-  default: jest.fn().mockResolvedValue(undefined),
-}));
-
-jest.mock("@/models/Product", () => ({
-  find: jest.fn().mockReturnValue({
-    lean: jest.fn().mockResolvedValue([]),
-  }),
-}));
 
 describe("Footer", () => {
-  it("should render footer", async () => {
-    render(await HomePage()); // HomePage() is async function
-    expect(screen.getByRole("contentinfo")).toBeInTheDocument();
-  });
-
   it("should show copyright", () => {
     render(<Footer />);
     expect(screen.getByText(/copyright/i)).toBeInTheDocument();

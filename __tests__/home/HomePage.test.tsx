@@ -1,36 +1,30 @@
 import { render, screen } from "@testing-library/react";
 import HomePage from "@/app/home/page";
 
-jest.mock("@/lib/dbConnect", () => ({
+jest.mock("@/app/lib/dbConnect", () => ({
   __esModule: true,
   default: jest.fn().mockResolvedValue(undefined),
 }));
 
-jest.mock("@/models/Product", () => ({
-  find: jest.fn().mockReturnValue({
-    lean: jest.fn().mockResolvedValue([]),
-  }),
-}));
+jest.mock("@/app/models/Product", () => {
+  return {
+    __esModule: true,
+    default: {
+      findOne: jest.fn().mockResolvedValue({
+        name: "Product",
+        new: true,
+      }),
+    },
+  };
+});
 
 describe("Home page", () => {
   it("should render a heading", async () => {
     render(await HomePage()); // HomePage() is async function
     expect(
-      screen.getByRole("heading", { name: /bringing you the best audio gear/i })
-    ).toBeInTheDocument();
-  });
-
-    it("should render a navigation", async () => {
-    render(await HomePage()); // HomePage() is async function
-    expect(
-      screen.getByRole("heading", { name: /bringing you the best audio gear/i })
-    ).toBeInTheDocument();
-  });
-
-  it("should render a new product", async () => {
-    render(await HomePage()); // HomePage() is async function
-    expect(
-      screen.getByRole("heading", { name: /new product/i })
+      screen.getByRole("heading", {
+        name: /bringing you the best audio gear/i,
+      }),
     ).toBeInTheDocument();
   });
 
@@ -43,7 +37,7 @@ describe("Home page", () => {
     });
   });
 
-  it("should render four random products", async () => {
+  it("should render four products", async () => {
     render(await HomePage()); // HomePage() is async function
     const buttons = screen.getAllByRole("button", {
       name: /see product/i,

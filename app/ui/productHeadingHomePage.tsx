@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-type ProductHeadingProps = {
+type ProductHeadingHomePageProps = {
   name: string;
   description?: string;
   children: React.ReactNode;
@@ -10,7 +10,7 @@ type ProductHeadingProps = {
   titleSize: "text-4xl md:text-[3.5rem]" | "text-[1.75rem]";
 };
 
-export default function ProductHeading({
+export default function ProductHeadingHomePage({
   name,
   description,
   children,
@@ -18,12 +18,12 @@ export default function ProductHeading({
   isNew,
   titleColor,
   titleSize,
-}: ProductHeadingProps) {
+}: ProductHeadingHomePageProps) {
   return (
     <div className={clsx(className)}>
       {isNew && (
         <p className="text-sm tracking-[10px] text-white/50 uppercase">
-          {isNew && "New Product"}
+          New Product
         </p>
       )}
       <h3

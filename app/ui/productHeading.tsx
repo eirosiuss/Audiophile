@@ -26,7 +26,7 @@ export default function ProductHeading({
           {isNew && "New Product"}
         </p>
       )}
-      <h2
+      <h3
         className={clsx(
           "pt-4 pb-6 font-bold uppercase md:py-6",
           titleColor,
@@ -34,7 +34,7 @@ export default function ProductHeading({
         )}
       >
         {name}
-      </h2>
+      </h3>
       {description && (
         <p className="pb-7 text-[0.938rem] text-white/75 md:pb-10">
           {description}

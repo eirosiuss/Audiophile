@@ -32,9 +32,9 @@ export default async function HomePage() {
 
   return (
     <>
-      <div className="h-[600px] bg-[url('@/public/home/desktop/image-hero.jpg')] bg-cover bg-position-[75%_50%] px-6 md:h-[729px] md:bg-position-[87%_50%] md:px-10 lg:bg-right">
-        <div className="mx-auto max-w-277.5">
-          {headphone && (
+      {headphone && (
+        <div className="h-[600px] bg-[url('@/public/home/desktop/image-hero.jpg')] bg-cover bg-position-[75%_50%] px-6 md:h-[729px] md:bg-position-[87%_50%] md:px-10 lg:bg-right">
+          <div className="mx-auto max-w-277.5">
             <ProductHeading
               titleColor="text-white"
               titleSize="text-4xl md:text-[3.5rem]"
@@ -46,9 +46,9 @@ export default async function HomePage() {
             >
               <Button backgroundColor="orange" />
             </ProductHeading>
-          )}
+          </div>
         </div>
-      </div>
+      )}
       <main className="mx-6 mb-30 md:mx-10 md:mb-24 lg:mb-50 lg:max-w-277.5 xl:mx-auto">
         <CategoriesLinks className="pt-10 pb-30 md:py-24 lg:pt-30 lg:pb-42" />
         {speaker && (
@@ -76,9 +76,9 @@ export default async function HomePage() {
           </div>
         )}
 
-        <div className="mb-6 h-80 rounded-lg bg-[url('@/public/home/tablet/image-speaker-zx7.jpg')] bg-cover bg-center md:mb-8 lg:mb-12 lg:bg-bottom">
-          <div className="mx-auto flex h-full max-w-277.5 flex-col justify-center">
-            {speakerTwo && (
+        {speakerTwo && (
+          <div className="mb-6 h-80 rounded-lg bg-[url('@/public/home/tablet/image-speaker-zx7.jpg')] bg-cover bg-center md:mb-8 lg:mb-12 lg:bg-bottom">
+            <div className="mx-auto flex h-full max-w-277.5 flex-col justify-center">
               <ProductHeading
                 titleColor="text-black"
                 titleSize="text-[1.75rem]"
@@ -87,13 +87,13 @@ export default async function HomePage() {
               >
                 <Button backgroundColor="transparent" />
               </ProductHeading>
-            )}
+            </div>
           </div>
-        </div>
+        )}
 
-        <div className="flex flex-col gap-6 md:flex-row md:gap-2.5 lg:gap-7.5">
-          <div className="h-50 rounded-lg bg-[url('@/public/home/tablet/image-earphones-yx1.jpg')] bg-cover bg-center md:h-80 md:w-1/2"></div>
-          {earphone && (
+        {earphone && (
+          <div className="flex flex-col gap-6 md:flex-row md:gap-2.5 lg:gap-7.5">
+            <div className="h-50 rounded-lg bg-[url('@/public/home/tablet/image-earphones-yx1.jpg')] bg-cover bg-center md:h-80 md:w-1/2"></div>
             <div className="bg-grey-light rounded-lg md:w-1/2">
               <ProductHeading
                 titleColor="text-black"
@@ -104,8 +104,8 @@ export default async function HomePage() {
                 <Button backgroundColor="transparent" />
               </ProductHeading>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </main>
       <Header />
       <Footer />

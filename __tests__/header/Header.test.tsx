@@ -1,5 +1,4 @@
 import { render, screen } from "@testing-library/react";
-
 import Header from "@/app/ui/header";
 
 describe("Header", () => {

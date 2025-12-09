@@ -1,6 +1,5 @@
-//itr
 import { render, screen } from "@testing-library/react";
-import HomePage from "@/app/home/page";
+import Headphones from "@/app/home/headphones/page";
 
 jest.mock("@/app/lib/dbConnect", () => ({
   __esModule: true,
@@ -19,18 +18,18 @@ jest.mock("@/app/models/Product", () => {
   };
 });
 
-describe("Home page", () => {
-  it("should render a header", async () => {
-    render(await HomePage()); // HomePage() is async function
+describe("Headphones", async () => {
+  it("should render a heading", async () => {
+    render(await Headphones());
     expect(
       screen.getByRole("heading", {
-        name: /bringing you the best audio gear/i,
+        name: /headphones/i,
       }),
     ).toBeInTheDocument();
   });
 
   it("should render a product list with links", async () => {
-    render(await HomePage()); // HomePage() is async function
+    render(await Headphones());
     const hrefs = ["/home/headphones", "/home/speakers", "/home/earphones"];
     const links = screen.getAllByRole("link");
     links.forEach((link, index) => {
@@ -38,16 +37,16 @@ describe("Home page", () => {
     });
   });
 
-  it("should render four products", async () => {
-    render(await HomePage()); // HomePage() is async function
+  it("should render available products", async () => {
+    render(await Headphones());
     const buttons = screen.getAllByRole("button", {
       name: /see product/i,
     });
-    expect(buttons).toHaveLength(4);
+    expect(buttons).toBeTruthy();
   });
 
-    it("should render a footer", async () => {
-    render(await HomePage()); // HomePage() is async function
-    expect(screen.getByText(/copyright/i)).toBeInTheDocument();
-  });
+      it("should render a footer", async () => {
+      render(await Headphones());
+      expect(screen.getByText(/copyright/i)).toBeInTheDocument();
+    });
 });

@@ -8,7 +8,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Nav />
-      <>{children}</>
+      <div className="mt-22.5">{children}</div>
     </>
   );
 }

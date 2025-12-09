@@ -28,7 +28,7 @@ export default function Nav() {
             <rect y="12" width="16" height="3" fill="white" />
           </svg>
         </button>
-        <Link href="/home">
+        <Link href="/home" onClick={() => setIsOpen(false)}>
           <svg
             width="143"
             height="25"

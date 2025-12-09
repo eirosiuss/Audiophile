@@ -33,16 +33,16 @@ export default async function HomePage() {
   return (
     <>
       {headphone && (
-        <div className="h-[600px] bg-[url('@/public/home/desktop/image-hero.jpg')] bg-cover bg-position-[75%_50%] px-6 md:h-[729px] md:bg-position-[87%_50%] md:px-10 lg:bg-right">
-          <div className="mx-auto max-w-277.5">
+        <div className="h-[510px] bg-[url('@/public/home/desktop/image-hero.jpg')] bg-cover bg-position-[77%] px-6 md:h-[639px] md:bg-position-[91%] md:px-10 lg:bg-right">
+          <div className="mx-auto flex h-full w-full max-w-277.5 items-center justify-center lg:justify-start">
             <ProductHeading
               titleColor="text-white"
               titleSize="text-4xl md:text-[3.5rem]"
-              className="pt-50 text-center md:mx-auto md:max-w-94 md:pt-54 lg:mx-0 lg:pt-56 lg:text-left"
+              className="text-center md:max-w-94 lg:text-left"
               isNew={headphone.new}
               name={headphone.name}
               description="Experience natural, lifelike audio and exceptional build quality
-                made for the passionate music enthusiast."
+            made for the passionate music enthusiast."
             >
               <Button backgroundColor="orange" />
             </ProductHeading>

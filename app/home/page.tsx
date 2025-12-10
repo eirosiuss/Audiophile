@@ -1,5 +1,4 @@
-import dbConnect from "@/app/lib/dbConnect";
-import Product from "@/app/models/Product";
+import { fetchProductsByCategory } from "@/app/lib/data";
 import Button from "../ui/buttons/button";
 import CategoriesLinks from "../ui/categoriesLinks";
 import Speaker from "@/public/product-zx9-speaker/desktop/image-product.svg";
@@ -9,26 +8,21 @@ import Header from "../ui/header";
 import Footer from "../ui/footer";
 
 export default async function HomePage() {
-  await dbConnect();
-  const speaker = await Product.findOne({
-    category: "speakers",
-    name: "ZX9 Speaker",
-  });
+  const speakerTwo = (await fetchProductsByCategory("speakers")).find(
+    (p) => p.name === "ZX7 Speaker",
+  );
 
-  const speakerTwo = await Product.findOne({
-    category: "speakers",
-    name: "ZX7 Speaker",
-  });
+  const speaker = (await fetchProductsByCategory("speakers")).find(
+    (p) => p.name === "ZX9 Speaker",
+  );
 
-  const headphone = await Product.findOne({
-    category: "headphones",
-    new: true,
-  });
+  const headphone = (await fetchProductsByCategory("headphones")).find(
+    (p) => p.name === "XX99 Mark II Headphones",
+  );
 
-  const earphone = await Product.findOne({
-    category: "earphones",
-    name: "YX1 Wireless Earphones",
-  });
+  const earphone = (await fetchProductsByCategory("earphones")).find(
+    (p) => p.name === "YX1 Wireless Earphones",
+  );
 
   return (
     <>

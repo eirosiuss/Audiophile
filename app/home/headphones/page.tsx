@@ -1,12 +1,9 @@
-import dbConnect from "@/app/lib/dbConnect";
-import Product, { Products } from "@/app/models/Product";
 import PageTitle from "@/app/ui/pageTitle";
 import ProductHeadingCategoryPage from "@/app/ui/productHeadingCategoryPage";
+import { fetchProductsByCategory } from "@/app/lib/data";
 
 export default async function Headphones() {
-  await dbConnect();
-  const headphones: Products[] = await Product.find({ category: "headphones" });
-  console.log(headphones.map((h) => h));
+  const headphones = await fetchProductsByCategory("headphones");
 
   return (
     <>

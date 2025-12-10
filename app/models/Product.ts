@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 export interface Products extends mongoose.Document {
+  _id: mongoose.Types.ObjectId;
   slug: string;
   name: string;
   image: {
@@ -38,7 +39,7 @@ export interface Products extends mongoose.Document {
 
 const ProductSchema = new mongoose.Schema<Products>(
   {
-    slug: { type: String, required: true, unique: true },
+    slug: { type: String, required: true },
     name: { type: String, required: true },
     image: {
       mobile: { type: String },
@@ -51,14 +52,14 @@ const ProductSchema = new mongoose.Schema<Products>(
       tablet: { type: String },
       desktop: { type: String },
     },
-    new: { type: Boolean, default: true },
+    new: { type: Boolean, default: true, required: true },
     price: { type: Number, required: true },
-    description: { type: String },
-    features: { type: String },
+    description: { type: String, required: true },
+    features: { type: String, required: true },
     includes: [
       {
-        quantity: { type: Number },
-        item: { type: String },
+        quantity: { type: Number, required: true },
+        item: { type: String, required: true },
       },
     ],
     gallery: {

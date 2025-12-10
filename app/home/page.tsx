@@ -102,7 +102,6 @@ export default async function HomePage() {
         )}
       </main>
       <Header />
-      <Footer />
     </>
   );
 }

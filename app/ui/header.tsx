@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="mx-6 mb-30 flex flex-col gap-10 md:mx-10 md:mb-24 md:gap-15.75 lg:mb-50 lg:max-w-277.5 lg:flex-row lg:gap-31.25 xl:mx-auto">
+    <header className="mx-6 my-30 flex flex-col gap-10 md:mx-10 md:mb-24 md:gap-15.75 lg:my-40 lg:max-w-277.5 lg:flex-row lg:gap-31.25 xl:mx-auto">
       <div className="h-75 rounded-lg bg-[url('@/public/shared/tablet/image-best-gear.jpg')] bg-cover bg-center lg:h-147 lg:w-1/2 lg:order-2"></div>
       <div className="text-center md:text-balance lg:w-1/2 lg:text-left lg:my-auto">
         <h1 className="mb-8 text-[1.75rem] font-bold text-black uppercase md:text-[2.75rem] md:leading-11">

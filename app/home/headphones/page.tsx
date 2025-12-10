@@ -1,6 +1,7 @@
 import PageTitle from "@/app/ui/pageTitle";
 import ProductHeadingCategoryPage from "@/app/ui/productHeadingCategoryPage";
 import { fetchProductsByCategory } from "@/app/lib/data";
+import CategoriesLinks from "@/app/ui/categoriesLinks";
 
 export default async function Headphones() {
   const headphones = await fetchProductsByCategory("headphones");
@@ -23,6 +24,7 @@ export default async function Headphones() {
                 src={headphone.categoryImage.tablet.replace("./assets", "")}
               />
             ))}
+        <CategoriesLinks className="mx-6 max-w-277.5 md:mx-10 xl:mx-auto" />
       </main>
     </>
   );

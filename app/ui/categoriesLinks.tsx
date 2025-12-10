@@ -45,7 +45,7 @@ export default function CategoriesLinks({
   return (
     <ul
       className={clsx(
-        "flex w-full flex-col items-center justify-center gap-4 bg-white md:flex-row md:gap-2.5",
+        "flex flex-col items-center justify-center gap-4 bg-white md:flex-row md:gap-2.5",
         className,
       )}
     >
@@ -55,7 +55,7 @@ export default function CategoriesLinks({
             <Image className="mx-auto" src={item.image} alt={item.alt} />
           </div>
 
-          <div className="bg-grey-light -mt-12 flex w-full flex-col items-center justify-center rounded-lg pt-20">
+          <div className="bg-grey-light -mt-12 flex w-full flex-col items-center justify-center rounded-lg pt-20 lg:pt-36.5">
             <p className="text-[0.938rem] font-bold uppercase">{item.title}</p>
             <Link
               href={item.href}

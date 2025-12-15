@@ -16,14 +16,14 @@ export default async function Headphones() {
           speakers
             .slice()
             .reverse()
-            .map((headphone, index) => (
+            .map((speaker, index) => (
               <ProductHeadingCategoryPage
-                key={headphone._id.toString()}
-                name={headphone.name}
-                description={headphone.description}
-                isNew={headphone.new}
+                key={speaker._id.toString()}
+                name={speaker.name}
+                description={speaker.description}
+                isNew={speaker.new}
                 reverse={index % 2 === 1}
-                src={headphone.categoryImage.tablet.replace("./assets", "")}
+                src={speaker.categoryImage.tablet.replace("./assets", "")}
               >
                 {" "}
                 <Button backgroundColor="orange" />

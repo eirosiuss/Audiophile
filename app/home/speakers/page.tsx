@@ -1,12 +1,38 @@
-import dbConnect from "@/app/lib/dbConnect";
-import Product from "@/app/models/Product";
+import PageTitle from "@/app/ui/pageTitle";
+import ProductHeadingCategoryPage from "@/app/ui/productHeadingCategoryPage";
+import { fetchProductsByCategory } from "@/app/lib/data";
+import CategoriesLinks from "@/app/ui/categoriesLinks";
+import Header from "@/app/ui/header";
+import Button from "@/app/ui/buttons/button";
 
-export default async function Speakers() {
-  await dbConnect();
-  const products = await Product.find({}).lean();
-  const speakers = products
-    .map((product) => product)
-    .filter((speaker) => speaker.category === "speakers");
+export default async function Headphones() {
+  const speakers = await fetchProductsByCategory("speakers");
 
-  return <p>Speakers</p>;
+  return (
+    <>
+      <PageTitle name="Speakers" />
+      <main className="mt-16 space-y-30">
+        {speakers &&
+          speakers
+            .slice()
+            .reverse()
+            .map((headphone, index) => (
+              <ProductHeadingCategoryPage
+                key={headphone._id.toString()}
+                name={headphone.name}
+                description={headphone.description}
+                isNew={headphone.new}
+                reverse={index % 2 === 1}
+                src={headphone.categoryImage.tablet.replace("./assets", "")}
+              >
+                {" "}
+                <Button backgroundColor="orange" />
+              </ProductHeadingCategoryPage>
+            ))}
+        <CategoriesLinks className="mx-6 max-w-277.5 md:mx-10 xl:mx-auto" />
+      </main>
+      <Header />
+    </>
+  );
 }
+

@@ -1,4 +1,3 @@
-import Button from "./buttons/button";
 import clsx from "clsx";
 import Image from "next/image";
 
@@ -8,6 +7,7 @@ type ProductHeadingCategoryPageProps = {
   isNew?: boolean;
   reverse?: boolean;
   src: string;
+  children: React.ReactNode
 };
 
 export default function ProductHeadingCategoryPage({
@@ -16,6 +16,7 @@ export default function ProductHeadingCategoryPage({
   isNew,
   reverse = false,
   src,
+  children
 }: ProductHeadingCategoryPageProps) {
   return (
     <div
@@ -40,7 +41,7 @@ export default function ProductHeadingCategoryPage({
         <p className="text-[0.938rem] leading-6.25 text-black/50">
           {description}
         </p>
-        <Button backgroundColor="orange" />
+      {children}
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import ProductHeadingCategoryPage from "@/app/ui/productHeadingCategoryPage";
 import { fetchProductsByCategory } from "@/app/lib/data";
 import CategoriesLinks from "@/app/ui/categoriesLinks";
 import Header from "@/app/ui/header";
+import Button from "@/app/ui/buttons/button";
 
 export default async function Headphones() {
   const headphones = await fetchProductsByCategory("headphones");
@@ -23,7 +24,10 @@ export default async function Headphones() {
                 isNew={headphone.new}
                 reverse={index % 2 === 1}
                 src={headphone.categoryImage.tablet.replace("./assets", "")}
-              />
+              >
+                {" "}
+                <Button backgroundColor="orange" />
+              </ProductHeadingCategoryPage>
             ))}
         <CategoriesLinks className="mx-6 max-w-277.5 md:mx-10 xl:mx-auto" />
       </main>

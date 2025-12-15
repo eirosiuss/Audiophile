@@ -5,7 +5,6 @@ import Speaker from "@/public/product-zx9-speaker/desktop/image-product.svg";
 import Image from "next/image";
 import ProductHeadingHomePage from "../ui/productHeadingHomePage";
 import Header from "../ui/header";
-import Footer from "../ui/footer";
 
 export default async function HomePage() {
   const speakerTwo = (await fetchProductsByCategory("speakers")).find(

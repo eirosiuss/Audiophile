@@ -4,6 +4,7 @@ import { fetchProductsByCategory } from "@/app/lib/data";
 import CategoriesLinks from "@/app/ui/categoriesLinks";
 import Header from "@/app/ui/header";
 import Button from "@/app/ui/buttons/button";
+import Link from "next/link";
 
 export default async function Headphones() {
   const headphones = await fetchProductsByCategory("headphones");
@@ -26,7 +27,9 @@ export default async function Headphones() {
                 src={headphone.categoryImage.tablet.replace("./assets", "")}
               >
                 {" "}
-                <Button backgroundColor="orange" />
+                <Link href={`/home/headphones/${headphone.slug}`}>
+                  <Button backgroundColor="orange" />
+                </Link>
               </ProductHeadingCategoryPage>
             ))}
         <CategoriesLinks className="mx-6 max-w-277.5 md:mx-10 xl:mx-auto" />

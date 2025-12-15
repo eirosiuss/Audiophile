@@ -10,7 +10,7 @@ export default async function Headphones() {
 
   return (
     <>
-      <PageTitle name="Earphone" />
+      <PageTitle name="Earphones" />
       <main className="mt-16 space-y-30">
         {earphones &&
           earphones

@@ -13,3 +13,16 @@ export const fetchProductsByCategory = async (
     return [];
   }
 };
+
+export const fetchProductBySlug = async (
+  slug: string,
+): Promise<Products | null> => {
+  await dbConnect();
+  try {
+    const product = await Product.findOne({ slug });
+    return product;
+  } catch (error) {
+    console.error("Error fetching product:", error);
+    return null;
+  }
+};

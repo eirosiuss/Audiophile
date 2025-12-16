@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Logo from "@/public/shared/desktop/logo.svg";
-import NavLinks from "./navLinks";
+import NavLinks from "./navigation/navLinks";
 import FacebookIcon from "@/public/shared/desktop/icon-facebook.svg";
 import TwitterIcon from "@/public/shared/desktop/icon-twitter.svg";
 import InstagramIcon from "@/public/shared/desktop/icon-instagram.svg";

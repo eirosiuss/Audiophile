@@ -21,19 +21,19 @@ const items: CategoryItem[] = [
   {
     title: "Headphones",
     image: Headphone,
-    href: "/home/headphones",
+    href: "/headphones",
     alt: "xx99 mark one headphones",
   },
   {
     title: "Speakers",
     image: Speaker,
-    href: "/home/speakers",
+    href: "/speakers",
     alt: "zx9 speaker",
   },
   {
     title: "Earphones",
     image: Earphone,
-    href: "/home/earphones",
+    href: "/earphones",
     alt: "yx1 earphones",
   },
 ];

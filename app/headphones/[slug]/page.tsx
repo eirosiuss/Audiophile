@@ -1,4 +1,4 @@
-import { fetchProductBySlug } from "@/app/lib/data";
+import { fetchProductBySlug } from "@/app/_lib/data";
 
 type PageProps = {
   params: Promise<{ slug: string }>;

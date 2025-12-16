@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import NavLinks from "@/app/ui/navLinks";
+import NavLinks from "@/app/_ui/navigation/navLinks";
 import CategoriesLinks from "./categoriesLinks";
 import Link from "next/link";
 

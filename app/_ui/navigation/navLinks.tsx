@@ -7,10 +7,10 @@ export const links = [
   { name: "Home", href: "/home" },
   {
     name: "Headphones",
-    href: "/home/headphones",
+    href: "/headphones",
   },
-  { name: "Speakers", href: "/home/speakers" },
-  { name: "Earphones", href: "/home/earphones" },
+  { name: "Speakers", href: "/speakers" },
+  { name: "Earphones", href: "/earphones" },
 ];
 
 export default function NavLinks() {

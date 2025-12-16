@@ -1,5 +1,5 @@
-import dbConnect from "@/app/lib/dbConnect";
-import Product, { Products } from "@/app/models/Product";
+import dbConnect from "@/app/_lib/dbConnect";
+import Product, { Products } from "@/app/_models/Product";
 
 export const fetchProductsByCategory = async (
   category: string,

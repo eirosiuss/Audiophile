@@ -1,9 +1,9 @@
-import PageTitle from "@/app/ui/pageTitle";
-import ProductHeadingCategoryPage from "@/app/ui/productHeadingCategoryPage";
-import { fetchProductsByCategory } from "@/app/lib/data";
-import CategoriesLinks from "@/app/ui/categoriesLinks";
-import Header from "@/app/ui/header";
-import Button from "@/app/ui/buttons/button";
+import PageTitle from "@/app/_ui/headings/pageTitle";
+import ProductHeadingCategoryPage from "@/app/_ui/headings/productHeadingCategoryPage";
+import { fetchProductsByCategory } from "@/app/_lib/data";
+import CategoriesLinks from "@/app/_ui/navigation/categoriesLinks";
+import Header from "@/app/_ui/headings/header";
+import Button from "@/app/_ui/buttons/button";
 
 export default async function Headphones() {
   const speakers = await fetchProductsByCategory("speakers");

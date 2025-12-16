@@ -1,10 +1,10 @@
-import { fetchProductsByCategory } from "@/app/lib/data";
-import Button from "../ui/buttons/button";
-import CategoriesLinks from "../ui/categoriesLinks";
+import { fetchProductsByCategory } from "@/app/_lib/data";
+import Button from "../_ui/buttons/button";
+import CategoriesLinks from "../_ui/navigation/categoriesLinks";
 import Speaker from "@/public/product-zx9-speaker/desktop/image-product.svg";
 import Image from "next/image";
-import ProductHeadingHomePage from "../ui/productHeadingHomePage";
-import Header from "../ui/header";
+import ProductHeadingHomePage from "../_ui/headings/productHeadingHomePage";
+import Header from "../_ui/headings/header";
 
 export default async function HomePage() {
   const speakerTwo = (await fetchProductsByCategory("speakers")).find(
